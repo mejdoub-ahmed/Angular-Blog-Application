@@ -16,20 +16,19 @@ export class AddBlogComponent {
   // function to get the value 
   getTitleValue(value: any) {
     this.title = value
-    console.log(this.title);
   }
 
 
 // function to get the value 
   getAuthorValue(value: any) {
     this.author = value
-    console.log(this.author);
   }
+  
 // function to get the value 
   getContentValue(value: any) {
     this.content = value
-    console.log(this.content);
   }
+
 // function to upload image 
   uplodImage = async (event: any) => {
     const file = event.target.files[0];

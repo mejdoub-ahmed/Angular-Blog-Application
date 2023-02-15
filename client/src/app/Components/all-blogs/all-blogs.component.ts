@@ -49,7 +49,7 @@ export class AllBlogsComponent {
 
   downVoteBlog(item: any) {
     axios
-      .put(`http://localhost:5000/Blog/UpVoteBlog/${item._id}`, {
+      .put(`http://localhost:5000/Blog/DownVoteBlog/${item._id}`, {
         downvote: item.downvote +1,
       })
       .then(() => {
