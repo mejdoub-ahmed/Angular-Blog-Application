@@ -12,23 +12,38 @@
       <div class="row gx-5 justify-content-center">
         <div class="col-lg-8 col-xl-6">
           <div class="form-floating mb-3">
-            <input type="text" placeholder="Title" id="validationServer05" />
+            <input
+              type="text"
+              placeholder="Title"
+              [(ngModel)]="title"
+              (ngModelChange)="getTitleValue($event)"
+            />
           </div>
 
           <div class="form-floating mb-3">
-            <input type="text" placeholder="author" id="validationServer05" />
+            <input
+              type="text"
+              placeholder="author"
+              [(ngModel)]="author"
+              (ngModelChange)="getAuthorValue($event)"
+            />
           </div>
 
           <div class="form-floating mb-3">
-            <input type="file" />
+            <input type="file" (change)="uplodImage($event)" />
           </div>
 
           <div class="form-floating mb-3">
-            <input type="text" placeholder="content" />
+            <input
+              type="text"
+              placeholder="content"
+              [(ngModel)]="content"
+              (ngModelChange)="getContentValue($event)"
+            />
           </div>
 
           <div class="d-grid">
-            <button class="btn btn-dark">Submit</button>
+            <button (click)="addNewBlog()" class="btn btn-dark">Submit</button>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 // This is the AppModule in Angular, it's a root module that defines all the components 
 
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 // BrowserModule, which is a required module for any Angular application that runs in a browser. It provides common services and directives that are essential for running an Angular application in a browser.
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,6 +38,7 @@ import { BlogDetailComponent } from './Components/blog-detail/blog-detail.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   // The providers property is an array of the services that the components in this module can use.
   providers: [],
