@@ -48,15 +48,17 @@ export class AllBlogsComponent {
   }
 
   downVoteBlog(item: any) {
-    axios
-      .put(`http://localhost:5000/Blog/UpVoteBlog/${item._id}`, {
-        downvote: item.downvote +1,
-      })
-      .then(() => {
-        this.fetchAllBlogs();
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    if (item != 0) {
+      axios
+        .put(`http://localhost:5000/Blog/DownVoteBlog/${item._id}`, {
+          downvote: item.downvote + 1,
+        })
+        .then(() => {
+          this.fetchAllBlogs();
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   }
 }
