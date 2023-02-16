@@ -12,15 +12,15 @@ const {
 } = require("../Controller/Blog.js");
 
 //GET request to fetch all blogs.
-router.get("/GetAllBlogs", GetAllBlogs);
+router.get("/getAllBlogs", GetAllBlogs);
 // GET request for one blog.
-router.get("/GetOneBlog/:id", GetOneBlog);
+router.get("/getOneBlog/:id", GetOneBlog);
 // POST request for creating a new blog.
-router.post("/AddNewBlog", AddNewBlog);
+router.post("/addNewBlog", AddNewBlog);
 
 // Update request for updating the number of up and down vote of each blog
-router.put("/UpVoteBlog/:id", UpVoteBlog);
-router.put("/DownVoteBlog/:id", DownVoteBlog);
+router.put("/upVoteBlog/:id", UpVoteBlog);
+router.put("/downVoteBlog/:id", DownVoteBlog);
 // POST request for search for a blog.
 router.post("/SearchBlog", SearchBlog);
 

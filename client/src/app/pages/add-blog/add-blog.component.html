@@ -1,0 +1,99 @@
+<app-nav-bar></app-nav-bar>
+<section class="py-5">
+  <div class="container px-5">
+    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="text-center mb-5">
+        <div
+          class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+        ></div>
+        <h1 class="fw-bolder">Create a new blog</h1>
+        <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>
+      </div>
+
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <!-- renderSuccessBox  -->
+          <div *ngIf="submitBlog" class="alert alert-success">
+            <strong>Success!</strong> New blog Gets Added!
+          </div>
+
+          <!-- Title Input  -->
+          <div class="mb-3">
+            <input
+              class="form-control"
+              type="text"
+              #myInput
+              placeholder="Title"
+              (ngModelChange)="clearError()"
+              [ngClass]="{ 'is-invalid': errorTitle }"
+              [(ngModel)]="title"
+              (ngModelChange)="getTitleValue($event)"
+            />
+            <div *ngIf="errorTitle" style="color: #dc3545">
+              {{ errorTitle }}
+            </div>
+          </div>
+
+          <!-- author Input  -->
+          <div class="mb-3">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="author"
+              (ngModelChange)="clearError()"
+              [ngClass]="{ 'is-invalid': errorAuthor }"
+              [(ngModel)]="author"
+              (ngModelChange)="getAuthorValue($event)"
+            />
+            <div *ngIf="errorAuthor" style="color: #dc3545">
+              {{ errorAuthor }}
+            </div>
+          </div>
+          <!-- Image Input -->
+          <div class="mb-3">
+            <input
+              class="form-control"
+              type="file"
+              (change)="uploadImage($event)"
+            />
+          </div>
+          <!-- renderLoadingOnPictureUpload -->
+          <div *ngIf="submitPicture" class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+
+          <!-- renderUploadedPicture -->
+          <div class="mb-1">
+            <img
+              *ngIf="url"
+              class="img-fluid img-thumbnail"
+              [src]="url"
+              alt="Photo"
+            />
+          </div>
+
+          <!-- Content Input -->
+          <div class="mb-3">
+            <input
+              class="form-control"
+              style="height: 10rem"
+              type="text"
+              placeholder="content"
+              (ngModelChange)="clearError()"
+              [ngClass]="{ 'is-invalid': errorContent }"
+              [(ngModel)]="content"
+              (ngModelChange)="getContentValue($event)"
+            />
+            <div *ngIf="errorContent" style="color: #dc3545">
+              {{ errorContent }}
+            </div>
+          </div>
+
+          <div class="d-grid">
+            <button (click)="addNewBlog()" class="btn btn-dark">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

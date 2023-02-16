@@ -1,3 +1,5 @@
+<app-nav-bar></app-nav-bar>
+
 <header class="py-3 bg-light border-bottom mb-4">
   <div class="text-center my-5">
     <h1 class="fw-bolder">Welcome To Blog Home Page!</h1>
@@ -18,7 +20,10 @@
         <div class="row">
           <!-- First blog post -->
           <div *ngIf="firstBlog">
-            <div class="card col-md-12 mb-4">
+            <div
+              [ngStyle]="renderBorderElement(firstBlog)"
+              class="card col-md-12 mb-4"
+            >
               <img
                 class="card-img-top"
                 src="{{ firstBlog?.photo }}"
@@ -77,10 +82,10 @@
 
           <!-- All blogs post -->
           <div class="row">
-            <div *ngIf="data">
-              <!-- The *ngFor directive is used to loop through an array of elements in Angular. -->
-              <div *ngFor="let element of data" class="col-md-6 mb-4">
-                <div class="card">
+            <!-- The *ngFor directive is used to loop through an array of elements in Angular. -->
+            <div *ngFor="let element of data" class="col-md-6 mb-4">
+              <div>
+                <div [ngStyle]="renderBorderElement(element)" class="card">
                   <!-- {renderElement} -->
                   <img
                     class="card-img-top"

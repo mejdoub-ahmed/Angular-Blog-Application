@@ -1,4 +1,4 @@
-// This is the AppModule in Angular, it's a root module that defines all the components 
+// This is the AppModule in Angular, it's a root module that defines all the components
 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,15 +14,14 @@ import { AppComponent } from './app.component';
 
 // import the various components in the application:
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
-import { AddBlogComponent } from './Components/add-blog/add-blog.component'
-import { AllBlogsComponent } from './Components/all-blogs/all-blogs.component';
-import { BlogDetailComponent } from './Components/blog-detail/blog-detail.component'
+import { AddBlogComponent } from './pages/add-blog/add-blog.component';
+import { AllBlogsComponent } from './pages/all-blogs/all-blogs.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 
-
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './pages/search/search.component';
 
 //his is an array of all the components that are declared by this module.
-
-
 
 // The declarations property is an array of components that imported in the previous step.
 @NgModule({
@@ -31,17 +30,14 @@ import { BlogDetailComponent } from './Components/blog-detail/blog-detail.compon
     NavBarComponent,
     AddBlogComponent,
     AllBlogsComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
+    SearchComponent,
   ],
 
-//The imports property is an array of the modules that this module needs in order to run. 
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  //The imports property is an array of the modules that this module needs in order to run.
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   // The providers property is an array of the services that the components in this module can use.
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

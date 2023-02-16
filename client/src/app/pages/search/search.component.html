@@ -1,0 +1,17 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="col-lg-8 mb-4 mt-4">
+      <div class="input-group">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="Search"
+          [(ngModel)]="value"
+          (ngModelChange)="getSearchValue($event)"
+        />
+        <button type="button" class="btn btn-outline-dark">search</button>
+      </div>
+    </div>
+  </div>
+</div>

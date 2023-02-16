@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+
+<div *ngIf="oneBlog" class="container">
+  <div class="d-flex justify-content-center">
+    <div class="col-lg-8">
+    <div class="row">
+        <!--  Post content -->
+        <article>
+          <header class="mb-4">
+            <!-- Post title -->
+            <h1 class="fw-bolder mb-1 mt-5">{{ oneBlog?.title }}</h1>
+            <div class="text-muted fst-italic mb-2">
+              Posted by: {{ oneBlog?.author }}
+            </div>
+          </header>
+          <!-- Preview image figure -->
+          <img class="img-fluid rounded mb-5" src="{{ oneBlog?.photo }}" />
+
+          <!-- Post content -->
+          <section class="mb-5">
+            <p class="fs-5 mb-4">{{ oneBlog?.content }}</p>
+          </section>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
